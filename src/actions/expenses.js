@@ -34,12 +34,34 @@ export const removeExpense = ({ id } = {}) => ({
   id
 });
 
+export const setRemoveExpense = ({ id } = {}) => {
+  return dispatch => {
+    database
+      .ref(`expense/${id}`)
+      .remove()
+      .then(ref => {
+        dispatch(removeExpense({ id }));
+      });
+  };
+};
+
 //EDIT EXPENSE GENERATOR
 export const editExpense = (id, updates) => ({
   type: "EDIT_EXPENSE",
   id,
   updates
 });
+
+export const startEditExpense = (id, updates) => {
+  return dispatch => {
+    database
+      .ref(`expense/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      });
+  };
+};
 
 //SET_EXPENSES
 export const setExpenses = expense => ({
@@ -63,6 +85,21 @@ export const startSetExpenses = () => {
         });
 
         dispatch(setExpenses(expense));
+      });
+  };
+};
+
+export const removeAll = () => ({
+  type: "REMOVE_ALL"
+});
+
+export const setRemoveAll = () => {
+  return dispatch => {
+    return database
+      .ref("expense")
+      .set(null)
+      .then(() => {
+        dispatch(removeAll());
       });
   };
 };

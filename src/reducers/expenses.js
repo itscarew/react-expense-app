@@ -19,6 +19,8 @@ const expenseReducer = (state = expenseReducerDefaultState, action) => {
     });
   } else if (action.type === "SET_EXPENSES") {
     return action.expense;
+  } else if (action.type === "REMOVE_ALL") {
+    return (state = []);
   } else {
     return state;
   }

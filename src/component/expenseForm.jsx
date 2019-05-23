@@ -88,7 +88,6 @@ class ExpenseForm extends Component {
             onFocusChange={this.onFocusChange}
             numberOfMonths={1}
             isOutsideRange={() => false}
-            // id="your_unique_id"
           />
 
           <textarea
