@@ -7,7 +7,7 @@ class Header extends Component {
     return (
       <div>
         <h1>Expensify</h1>
-        <NavLink activeClassName="is-active" to="/" exact={true}>
+        <NavLink activeClassName="is-active" to="/main" exact={true}>
           DashBoard
         </NavLink>
         <NavLink activeClassName="is-active" to="/expense">

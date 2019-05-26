@@ -10,7 +10,7 @@ import { startSetExpenses } from "./actions/expenses";
 import getVisibleExpenses from "./selector/expenses";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
-import "./firebase/firebase";
+import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
 
@@ -39,3 +39,11 @@ store.dispatch(startSetExpenses()).then(() => {
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    console.log("log in");
+  } else {
+    console.log("log out");
+  }
+});

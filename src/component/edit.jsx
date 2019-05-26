@@ -11,13 +11,13 @@ const Edit = props => {
         expense={props.expense}
         onSubmit={expense => {
           props.dispatch(startEditExpense(props.expense.id, expense));
-          props.history.push("/");
+          props.history.push("/main");
         }}
       />
       <button
         onClick={() => {
           props.dispatch(setRemoveExpense({ id: props.expense.id }));
-          props.history.push("/");
+          props.history.push("/main");
         }}
       >
         Remove
