@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { startLogout } from "../actions/auth";
+import { connect } from "react-redux";
 
 class Header extends Component {
   state = {};
@@ -7,7 +9,7 @@ class Header extends Component {
     return (
       <div>
         <h1>Expensify</h1>
-        <NavLink activeClassName="is-active" to="/main" exact={true}>
+        <NavLink activeClassName="is-active" to="/main">
           DashBoard
         </NavLink>
         <NavLink activeClassName="is-active" to="/expense">
@@ -16,9 +18,17 @@ class Header extends Component {
         <NavLink activeClassName="is-active" to="/help">
           Help
         </NavLink>
+        <button onClick={this.props.startLogout}>Logout</button>
       </div>
     );
   }
 }
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+  startLogout: () => dispatch(startLogout())
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Header);

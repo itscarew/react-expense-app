@@ -7,10 +7,12 @@ import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
 // import {setTextFilter} from './actions/filters';
+import { logout, login } from "./actions/auth";
 import getVisibleExpenses from "./selector/expenses";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { firebase } from "./firebase/firebase";
+import { history } from "./routers";
 
 const store = configureStore();
 
@@ -29,11 +31,15 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById("root"));
+    hasRendered = true;
+  }
+};
 
-store.dispatch(startSetExpenses()).then(() => {
-  ReactDOM.render(jsx, document.getElementById("root"));
-});
+ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
@@ -42,8 +48,19 @@ serviceWorker.unregister();
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
+    console.log(user.uid);
+    store.dispatch(login(user));
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+    });
     console.log("log in");
+    if (history.location.pathname === "/") {
+      history.push("/main");
+    }
   } else {
+    store.dispatch(logout());
+    history.push("/");
+    renderApp();
     console.log("log out");
   }
 });
