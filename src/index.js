@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged(user => {
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
     });
-    console.log("log in");
+    // console.log("log in");
     if (history.location.pathname === "/") {
       history.push("/main");
     }
@@ -61,6 +61,6 @@ firebase.auth().onAuthStateChanged(user => {
     store.dispatch(logout());
     history.push("/");
     renderApp();
-    console.log("log out");
+    // console.log("log out");
   }
 });
