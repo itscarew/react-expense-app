@@ -7,17 +7,18 @@ class Header extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <h1>Expensify</h1>
-        <NavLink activeClassName="is-active" to="/main">
-          DashBoard
-        </NavLink>
-        <NavLink activeClassName="is-active" to="/expense">
-          Create Expense
-        </NavLink>
-        <NavLink activeClassName="is-active" to="/help">
-          Help
-        </NavLink>
+      <div className="header">
+        <div className="header-flex">
+          <h1>Expensify</h1>
+          <div className="links">
+            <NavLink activeClassName="is-active" to="/main">
+              DashBoard
+            </NavLink>
+            <NavLink activeClassName="is-active" to="/expense">
+              Create Expense
+            </NavLink>
+          </div>
+        </div>
         <button onClick={this.props.startLogout}>Logout</button>
       </div>
     );

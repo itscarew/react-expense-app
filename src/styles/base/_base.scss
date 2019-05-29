@@ -1,0 +1,55 @@
+$primary-color: #393e46;
+$secondary-color: #222831;
+$tertiary-color: #d65a31;
+$tertiary-color-hover: #a7401e;
+$light-grey: #eeeeee;
+$dark-grey: #777;
+$dark-grey-hover: #535353;
+$color-light: #fff;
+$color-dark: #000;
+$border-color: #484848;
+$color-danger: #f81d1d;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::placeholder {
+  color: $border-color;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@mixin positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+input {
+  outline: none;
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  padding: 4rem 10rem;
+}

@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  position: relative;
+  background: $secondary-color;
+  padding: 2rem 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  & h1 {
+    color: $color-light;
+    font-size: 4rem;
+  }
+
+  & .links {
+    margin-top: 1rem;
+    & a {
+      color: $color-dark;
+      font-size: 1.8rem;
+      font-weight: 200;
+
+      &:nth-child(2) {
+        margin-left: 1rem;
+      }
+    }
+
+    & .is-active {
+      color: $color-light;
+      font-size: 2.4rem;
+      transition: 0.2s;
+    }
+  }
+
+  & button {
+    padding: 1rem 3.5rem;
+    background: $dark-grey;
+    color: $color-light;
+    border-radius: 0.4rem;
+    font-size: 1.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $dark-grey-hover;
+    }
+  }
+}

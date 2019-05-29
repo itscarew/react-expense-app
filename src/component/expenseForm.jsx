@@ -61,7 +61,7 @@ class ExpenseForm extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="form-container">
         <h3>
           {this.state.submitError
             ? "Please Provide Your Description And Amount"

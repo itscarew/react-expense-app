@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import ExpenseForm from "./expenseForm";
 
 const AddExpense = props => (
-  <div>
+  <div className="form-add">
     <h1>Add Expense </h1>
     <ExpenseForm
       onSubmit={expense => {

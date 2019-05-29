@@ -4,7 +4,6 @@ import { createBrowserHistory } from "history";
 
 import Main from "./component/main";
 import Edit from "./component/edit";
-import HelpPage from "./component/helppage";
 import PageNotFound from "./component/pagenotfound";
 import AddExpense from "./component/addExpensePage";
 import Login from "./component/login";
@@ -22,7 +21,7 @@ export const Routers = () => {
           <PrivateRoute path="/main" component={Main} />
           <PrivateRoute path="/expense" component={AddExpense} />
           <PrivateRoute path="/edit/:id" component={Edit} />
-          <PrivateRoute path="/help" component={HelpPage} />
+
           <Route component={PageNotFound} />
         </Switch>
       </div>

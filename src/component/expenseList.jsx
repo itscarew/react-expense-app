@@ -6,10 +6,19 @@ import { setRemoveAll } from "../actions/expenses";
 
 const ExpenseList = props => (
   <div>
+    <div className="expense-header">
+      <span>
+        <p>Expense</p>
+      </span>
+      <span>
+        <p>Amount</p>
+      </span>
+    </div>
     {props.expense.length < 2 ? (
       ""
     ) : (
       <button
+        className="delete-all-btn"
         onClick={() => {
           props.dispatch(setRemoveAll(props.expense));
         }}
@@ -19,7 +28,7 @@ const ExpenseList = props => (
     )}
 
     {props.expense.length === 0 ? (
-      <h4>You Have No Expense List Available</h4>
+      <h4 className="no-expense">You Have No Expense List Available</h4>
     ) : (
       props.expense.map(expense => {
         return <ExpenseListItem key={expense.id} {...expense} />;

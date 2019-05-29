@@ -8,7 +8,7 @@ class Main extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="main-container">
         <ExpenseSummary />
         <ExpenseListFilter />
         <ExpenseList />

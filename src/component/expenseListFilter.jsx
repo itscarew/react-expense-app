@@ -24,9 +24,10 @@ class ExpenseListFilter extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="list-filter">
         <input
           type="text"
+          placeholder="Search Expenses"
           defaultValue={this.props.filters.text}
           onChange={e => {
             this.props.dispatch(setTextFilter(e.target.value));

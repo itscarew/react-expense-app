@@ -6,7 +6,7 @@ import { setRemoveExpense } from "../actions/expenses";
 
 const Edit = props => {
   return (
-    <div>
+    <div className="form-add">
       <ExpenseForm
         expense={props.expense}
         onSubmit={expense => {
@@ -15,6 +15,7 @@ const Edit = props => {
         }}
       />
       <button
+        className="btn-remove"
         onClick={() => {
           props.dispatch(setRemoveExpense({ id: props.expense.id }));
           props.history.push("/main");

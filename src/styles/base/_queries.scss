@@ -1,0 +1,61 @@
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  html {
+    font-size: 48%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 43%;
+  }
+
+  .main-container {
+    padding: 4rem 2rem;
+  }
+
+  .form-add {
+    padding: 2rem 2rem;
+
+    & .form-container {
+      & form {
+        & button {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 282px) {
+  .expense-header {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  html {
+    font-size: 40%;
+  }
+
+  .header {
+    flex-direction: column;
+
+    & .links {
+      & a {
+        display: block;
+      }
+    }
+  }
+}
