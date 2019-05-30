@@ -8,11 +8,12 @@ import configureStore from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
 // import {setTextFilter} from './actions/filters';
 import { logout, login } from "./actions/auth";
-import getVisibleExpenses from "./selector/expenses";
+// import getVisibleExpenses from "./selector/expenses";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { firebase } from "./firebase/firebase";
 import { history } from "./routers";
+import Loader from "./component/loader";
 
 const store = configureStore();
 
@@ -21,9 +22,9 @@ const store = configureStore();
 // store.dispatch(addExpense({description: "rent", amount : 104500, createdAt : 10}));
 // store.dispatch(setTextFilter('water'));
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expense, state.filters);
-console.log(visibleExpenses);
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpenses(state.expense, state.filters);
+// console.log(visibleExpenses);
 
 const jsx = (
   <Provider store={store}>
@@ -39,7 +40,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
+ReactDOM.render(<Loader />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
