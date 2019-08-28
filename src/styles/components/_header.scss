@@ -1,47 +1,57 @@
 .header {
   width: 100%;
   position: relative;
-  background: $secondary-color;
-  padding: 2rem 10rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  height: 6rem;
+  background: $primary-color;
+  padding-left: 8.5rem;
 
-  & h1 {
-    color: $color-light;
-    font-size: 4rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
   }
 
-  & .links {
-    margin-top: 1rem;
-    & a {
-      color: $color-dark;
-      font-size: 1.8rem;
-      font-weight: 200;
+  &__title {
+    font-size: 2.5rem;
+    color: $color-light;
+  }
 
-      &:nth-child(2) {
-        margin-left: 1rem;
+  &__controller {
+    display: flex;
+    align-self: stretch;
+    width: 40%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    & a {
+      background-color: $color-gray-light;
+      flex-grow: 1;
+      font-size: 1.4rem;
+      text-align: center;
+      padding: 1.8rem 0;
+      color: $primary-color;
+      border: 0.1rem solid rgba($color-gray, 0.4);
+      border-top: none;
+
+      @media screen and (max-width: 768px) {
+        padding: 0.8rem;
+      }
+
+      &:active {
+        background-color: $color-gray-dark;
       }
     }
-
-    & .is-active {
+    & button {
+      background-color: $color-dark;
+      flex-grow: 1;
+      font-size: 1.4rem;
       color: $color-light;
-      font-size: 2.4rem;
-      transition: 0.2s;
-    }
-  }
-
-  & button {
-    padding: 1rem 3.5rem;
-    background: $dark-grey;
-    color: $color-light;
-    border-radius: 0.4rem;
-    font-size: 1.5rem;
-    transition: all 0.2s;
-
-    &:hover {
-      background: $dark-grey-hover;
     }
   }
 }

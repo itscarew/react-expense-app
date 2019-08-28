@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
 
-const now = moment();
-console.log(now.format("MMM Do, YYYY"));
-
 class ExpenseForm extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +58,7 @@ class ExpenseForm extends Component {
   };
   render() {
     return (
-      <div className="form-container">
+      <div className="expense__add_container_form_container">
         <h3>
           {this.state.submitError
             ? "Please Provide Your Description And Amount"
@@ -70,7 +67,7 @@ class ExpenseForm extends Component {
         <form onSubmit={this.onSubmit}>
           <input
             type="text"
-            placeholder="description"
+            placeholder="description / expense "
             autoFocus
             value={this.state.description}
             onChange={this.descriptionChange}
@@ -91,7 +88,7 @@ class ExpenseForm extends Component {
           />
 
           <textarea
-            placeholder="Add a note for your Expense (Optional"
+            placeholder="Add a note for your Expense (Optional)"
             value={this.state.note}
             onChange={this.noteChange}
           />

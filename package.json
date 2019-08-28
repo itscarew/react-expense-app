@@ -12,6 +12,7 @@
     "postcss-cli": "^6.1.2",
     "react": "^16.8.6",
     "react-addons-shallow-compare": "^15.6.2",
+    "react-app-polyfill": "^1.0.2",
     "react-dates": "^20.1.0",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
@@ -28,7 +29,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prefix:css": "postcss --use autoprefixer -b 'last ten versions' src/index.css -o  src/index.css"
-
+  },
+  "devDependencies": {
+    "env-cmd": "^9.0.3"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -24,7 +24,7 @@ class ExpenseListFilter extends Component {
   };
   render() {
     return (
-      <div className="list-filter">
+      <div className="expenses__summary_container_filter">
         <input
           type="text"
           placeholder="Search Expenses"
@@ -58,6 +58,7 @@ class ExpenseListFilter extends Component {
           showClearDates={true}
           startDateId="Date Range Start"
           endDateId="Date Range End"
+          noBorder
         />
       </div>
     );

@@ -1,253 +1,58 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth; }
+
+*,
+*::after,
+*::before {
   box-sizing: inherit; }
 
-::placeholder {
-  color: #484848; }
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
 
 body {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif; }
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+  line-height: 1.8;
+  color: #222831; }
 
-html {
-  font-size: 62.5%; }
+h1,
+h2,
+h3 {
+  letter-spacing: 0.1rem; }
 
-a {
+p {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: #222831 !important; }
+
+ul {
+  list-style: none; }
+
+a:link {
   text-decoration: none; }
 
+input,
+textarea {
+  outline: none;
+  color: #222831; }
+
+::placeholder {
+  color: #222831;
+  font-family: "Poppins", sans-serif; }
+
 button {
-  cursor: pointer;
-  border: none; }
-
-input {
-  outline: none; }
-
-.main-container {
-  position: relative;
-  width: 100%;
-  padding: 4rem 10rem; }
-
-.login-layout {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/balance-calculator-chart-163032.jpg"); }
-  .login-layout-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background: #eeeeee;
-    height: 28rem;
-    width: 38rem;
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: 0.3rem; }
-    .login-layout-box h2 {
-      font-size: 3rem;
-      text-transform: capitalize;
-      color: #393e46;
-      margin-top: 2rem; }
-    .login-layout-box p {
-      font-size: 2rem;
-      margin-top: 1.5rem;
-      text-transform: capitalize;
-      color: #777; }
-    .login-layout-box button {
-      margin-top: 2.5rem;
-      padding: 1.2rem 2rem;
-      width: 80%;
-      background: #d65a31;
-      color: #fff;
-      border-radius: 0.3rem;
-      font-size: 1.8rem;
-      text-transform: capitalize; }
-      .login-layout-box button:hover {
-        background: #a7401e; }
-
-.header {
-  width: 100%;
-  position: relative;
-  background: #222831;
-  padding: 2rem 10rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between; }
-  .header h1 {
-    color: #fff;
-    font-size: 4rem; }
-  .header .links {
-    margin-top: 1rem; }
-    .header .links a {
-      color: #000;
-      font-size: 1.8rem;
-      font-weight: 200; }
-      .header .links a:nth-child(2) {
-        margin-left: 1rem; }
-    .header .links .is-active {
-      color: #fff;
-      font-size: 2.4rem;
-      transition: 0.2s; }
-  .header button {
-    padding: 1rem 3.5rem;
-    background: #777;
-    color: #fff;
-    border-radius: 0.4rem;
-    font-size: 1.5rem;
-    transition: all 0.2s; }
-    .header button:hover {
-      background: #535353; }
-
-.view-expense {
-  position: relative;
-  width: 100%; }
-  .view-expense h1 {
-    font-size: 4.5rem; }
-
-.list-filter {
-  position: relative;
-  width: 100%;
-  margin: 5rem 0 0 0; }
-  .list-filter div {
-    margin: 0.4rem; }
-  .list-filter input,
-  .list-filter select {
-    height: 4rem;
-    width: 16rem;
-    border: none;
-    border: 0.1rem solid rgba(72, 72, 72, 0.3);
-    color: #484848; }
-
-.no-expense {
-  font-size: 3rem;
-  margin-top: 4rem; }
-
-.expense-header {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 8rem;
-  background-color: rgba(72, 72, 72, 0.3);
-  border: 0.1rem solid rgba(72, 72, 72, 0.2);
-  flex-wrap: wrap;
-  margin-top: 4rem; }
-  .expense-header span p {
-    font-size: 1.8rem; }
-
-.delete-all-btn {
-  width: 18rem;
-  height: 5rem;
-  color: #fff;
-  background: #f81d1d;
-  margin: 1rem 0; }
-
-.expense-list {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 8rem;
-  background-color: rgba(72, 72, 72, 0.1);
-  border: 0.1rem solid rgba(72, 72, 72, 0.2);
-  flex-wrap: wrap;
+  outline: none;
+  border: none;
   cursor: pointer; }
-  .expense-list:hover {
-    background-color: rgba(72, 72, 72, 0.2); }
-  .expense-list:active {
-    background-color: rgba(72, 72, 72, 0.5); }
-  .expense-list h3 {
-    font-size: 2.5rem;
-    text-transform: capitalize;
-    color: #000; }
-  .expense-list p {
-    margin-top: 1.3rem;
-    font-size: 1.6rem;
-    color: #000;
-    text-transform: capitalize; }
 
-.form-add {
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+.login {
   width: 100%;
-  position: relative;
-  padding: 2rem 10rem; }
-  .form-add h1 {
-    font-size: 4rem; }
-  .form-add .form-container {
-    position: relative; }
-    .form-add .form-container h3 {
-      font-size: 2rem;
-      margin: 1rem 0; }
-    .form-add .form-container form {
-      display: flex;
-      flex-direction: column; }
-      .form-add .form-container form input,
-      .form-add .form-container form textarea {
-        height: 4rem;
-        width: 100%;
-        margin: 1rem 0;
-        padding: 0.5rem;
-        border: none;
-        border: 0.1rem solid rgba(72, 72, 72, 0.4); }
-      .form-add .form-container form button {
-        width: 30%;
-        padding: 1.5rem;
-        background: #d65a31;
-        color: #fff;
-        transition: all 0.2s; }
-        .form-add .form-container form button:hover {
-          background: #a7401e; }
-  .form-add .btn-remove {
-    width: 25%;
-    padding: 1.5rem;
-    background: #f81d1d;
-    color: #fff;
-    transition: all 0.2s;
-    margin: 1rem 0; }
-    .form-add .btn-remove:hover {
-      background: #a7401e; }
-
-@media only screen and (max-width: 1200px) {
-  html {
-    font-size: 62.5%; } }
-
-@media only screen and (max-width: 900px) {
-  html {
-    font-size: 55.5%; } }
-
-@media only screen and (max-width: 660px) {
-  html {
-    font-size: 48%; } }
-
-@media only screen and (max-width: 500px) {
-  html {
-    font-size: 43%; }
-  .main-container {
-    padding: 4rem 2rem; }
-  .form-add {
-    padding: 2rem 2rem; }
-    .form-add .form-container form button {
-      width: 40%; } }
-
-@media only screen and (max-width: 282px) {
-  .expense-header {
-    display: none; } }
-
-@media only screen and (max-width: 250px) {
-  html {
-    font-size: 40%; }
-  .header {
-    flex-direction: column; }
-    .header .links a {
-      display: block; } }
-
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%); }
+  height: 100vh; }

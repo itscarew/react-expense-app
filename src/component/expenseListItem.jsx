@@ -8,14 +8,14 @@ class ExpenseListItem extends Component {
     const { description, id, amount, createdAt, note } = this.props;
     return (
       <NavLink to={`/edit/${id}`}>
-        <div className="expense-list">
+        <div className="expenses__list_container_expense_item">
           <div>
             <h3>{description}</h3>
-            <p>{moment(createdAt).format("MMM Do, YYYY")}</p>
-            <p>{note ? note : "no details specified ....."}</p>
+            <p> Date : {moment(createdAt).format("MMM Do, YYYY")}</p>
+            <p> Note : {note ? note : "no details specified "}</p>
           </div>
-          <div>
-            <p>{numeral(amount / 100).format("$0,0.00")}</p>
+          <div className="expenses__list_container_expense_item_price">
+            <p> {numeral(amount / 100).format("$0,0.00")}</p>
           </div>
         </div>
       </NavLink>

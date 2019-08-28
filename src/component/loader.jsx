@@ -1,8 +1,11 @@
 import React from "react";
+import loader from "../assets/laoder.gif";
 
 const Loader = () => (
   <div className="loader">
-    <img src="/images/tenor.gif" alt="Loading....." />
+    <div className="loader__img_conatainer">
+      <img alt="loader" src={loader} />
+    </div>
   </div>
 );
 

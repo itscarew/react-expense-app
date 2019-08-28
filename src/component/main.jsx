@@ -1,20 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import ExpenseList from "./expenseList";
 import ExpenseListFilter from "./expenseListFilter";
 import "../firebase/firebase";
 import ExpenseSummary from "./expenseSummary";
 
-class Main extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="main-container">
-        <ExpenseSummary />
-        <ExpenseListFilter />
-        <ExpenseList />
-      </div>
-    );
-  }
-}
+const Main = () => (
+  <div className="expenses">
+    <div className="expenses__summary_container">
+      <ExpenseSummary />
+      <ExpenseListFilter />
+    </div>
+    <div className="expenses__list_container">
+      <ExpenseList />
+    </div>
+  </div>
+);
 
 export default Main;

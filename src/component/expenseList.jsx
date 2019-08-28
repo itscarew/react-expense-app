@@ -2,33 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import ExpenseListItem from "./expenseListItem";
 import selectExpenses from "../selector/expenses";
-import { setRemoveAll } from "../actions/expenses";
 
 const ExpenseList = props => (
-  <div>
-    <div className="expense-header">
-      <span>
-        <p>Expense</p>
-      </span>
-      <span>
-        <p>Amount</p>
-      </span>
-    </div>
-    {props.expense.length < 2 ? (
-      ""
-    ) : (
-      <button
-        className="delete-all-btn"
-        onClick={() => {
-          props.dispatch(setRemoveAll(props.expense));
-        }}
-      >
-        Delete All
-      </button>
-    )}
-
+  <div className="expenses__list_container_expense">
     {props.expense.length === 0 ? (
-      <h4 className="no-expense">You Have No Expense List Available</h4>
+      <h1>You Have No Expense List Available</h1>
     ) : (
       props.expense.map(expense => {
         return <ExpenseListItem key={expense.id} {...expense} />;

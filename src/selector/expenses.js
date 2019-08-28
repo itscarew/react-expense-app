@@ -1,30 +1,32 @@
-import moment from 'moment';
+import moment from "moment";
 //GET VISIBLE
-const getVisibleExpenses = (expenses, {
-    text,
-    sortBy,
-    startDate,
-    endDate
-}) => {
-    return expenses.filter((expense) => {
-        const createdAtMoment = moment(expense.createdAt)
-        const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true
-        const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true
-        // const startDateMatch = typeof startDate !== "number" || expense.createdAt >= startDate;
-        // const endDateMatch = typeof endDate !== "number" || expense.createdAt <= endDate;
-        const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
+const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
+  return expenses
+    .filter(expense => {
+      const createdAtMoment = moment(expense.createdAt);
+      const startDateMatch = startDate
+        ? startDate.isSameOrBefore(createdAtMoment, "day")
+        : true;
+      const endDateMatch = endDate
+        ? endDate.isSameOrAfter(createdAtMoment, "day")
+        : true;
+      // const startDateMatch = typeof startDate !== "number" || expense.createdAt >= startDate;
+      // const endDateMatch = typeof endDate !== "number" || expense.createdAt <= endDate;
+      const textMatch =
+        expense.description.toLowerCase().includes(text.toLowerCase()) ||
+        expense.note.toLowerCase().includes(text.toLowerCase());
 
-        return startDateMatch && endDateMatch && textMatch;
-
-    }).sort((a, b) => {
-        if (sortBy === "date") {
-            return a.createdAt < b.createdAt ? 1 : -1;
-        } else if (sortBy === "amount") {
-            return a.amount < b.amount ? 1 : -1;
-        } else {
-            return 0;
-        }
+      return startDateMatch && endDateMatch && textMatch;
+    })
+    .sort((a, b) => {
+      if (sortBy === "date") {
+        return a.createdAt < b.createdAt ? 1 : -1;
+      } else if (sortBy === "amount") {
+        return a.amount < b.amount ? 1 : -1;
+      } else {
+        return 0;
+      }
     });
 };
 
-export default getVisibleExpenses
+export default getVisibleExpenses;

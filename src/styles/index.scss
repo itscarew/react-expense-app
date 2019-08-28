@@ -1,9 +1,9 @@
 @import "./base/base";
-@import "./components/loginLayout";
-@import "./components/header";
-@import "./components/viewExpense";
-@import "./components/expenseFilter";
-@import "./components/expenseList";
-@import "./components/fromStlye";
-@import "./base/queries";
+@import "./base/animation";
+@import "./base/mixins";
+@import "./components/main";
+@import "./components/login";
 @import "./components/loader";
+@import "./components/header";
+@import "./components/addexpense";
+@import "./components/pnf";
