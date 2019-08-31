@@ -92,7 +92,9 @@ class ExpenseForm extends Component {
             value={this.state.note}
             onChange={this.noteChange}
           />
-          <button type="submit">Add Expense</button>
+          <button type="submit">
+            {this.props.expense ? "Update Expense" : "Add Expense"}{" "}
+          </button>
         </form>
       </div>
     );
