@@ -1,13 +1,16 @@
-import * as firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/database";
+import "firebase/auth";
+import "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBPUulOFAX6L0St4zvpWvZ8hIPAUDZ_VYE",
-  authDomain: "expensify-1f13f.firebaseapp.com",
-  databaseURL: "https://expensify-1f13f.firebaseio.com",
-  projectId: "expensify-1f13f",
-  storageBucket: "expensify-1f13f.appspot.com",
-  messagingSenderId: "544193783401",
-  appId: "1:544193783401:web:c4106278decdf1e9"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_ID
 };
 
 firebase.initializeApp(firebaseConfig);

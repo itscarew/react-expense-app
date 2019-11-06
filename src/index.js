@@ -16,6 +16,7 @@ import "react-dates/lib/css/_datepicker.css";
 import { firebase } from "./firebase/firebase";
 import { history } from "./routes/routers";
 import Loader from "./component/loader";
+import Modal from "react-modal";
 
 const store = configureStore();
 
@@ -32,6 +33,8 @@ const renderApp = () => {
     hasRendered = true;
   }
 };
+
+Modal.setAppElement(document.getElementById("root"));
 
 ReactDOM.render(<Loader />, document.getElementById("root"));
 
