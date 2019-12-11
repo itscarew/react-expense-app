@@ -1,0 +1,126 @@
+.expenses {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8rem;
+
+  @media screen and (min-width: 0px) and (max-width: 414px) {
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 415px) and (max-width: 768px) {
+    width: 0 1rem;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 0 2rem;
+  }
+
+  &__summary_container {
+    width: 100%;
+
+    &_summary {
+      width: 100%;
+      margin: 1rem;
+
+      & h1 {
+        font-size: 2.5rem;
+        color: $color-dark;
+      }
+    }
+
+    &_filter {
+      display: flex;
+      margin: 1rem 0;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      & input {
+        padding-left: 2rem;
+        border-bottom: 1.5px solid $primary-color;
+
+        @media screen and (max-width: 768px) {
+          height: 4rem;
+          margin: 0.5rem 0;
+        }
+      }
+      & select {
+        padding: 0 2rem;
+        border-bottom: 1.5px solid $primary-color;
+
+        @media screen and (max-width: 768px) {
+          height: 4rem;
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+
+  &__list_container {
+    width: 100%;
+    margin: 2rem 0;
+
+    &_expense {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      & a {
+        display: block;
+        flex-basis: 50%;
+        flex-shrink: 0;
+
+        @media screen and (max-width: 800px) {
+          flex-basis: 100%;
+        }
+
+        @media screen and (min-width: 801px) and (max-width: 1024px) {
+          flex-basis: 70%;
+        }
+      }
+
+      &_item {
+        margin: 1rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: auto;
+        min-height: 20rem;
+        background-color: rgba($color-gray-dark, 0.1);
+        padding: 2.2rem 2rem;
+        box-shadow: 5px 10px 5px -7px $color-gray-dark;
+        transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 2);
+
+        &:hover {
+          background-color: rgba($color-gray-dark, 0.4);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        & h3 {
+          font-size: 2.3rem;
+          color: $primary-color;
+          text-transform: capitalize;
+        }
+
+        & p {
+          text-transform: capitalize;
+        }
+
+        &_price {
+          background: $primary-color;
+          padding: 0.5rem 1rem;
+          p {
+            font-size: 1.3rem;
+            color: $color-gray-light !important;
+          }
+        }
+      }
+    }
+  }
+}

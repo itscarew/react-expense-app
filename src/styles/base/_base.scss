@@ -1,0 +1,81 @@
+$color-dark: #222831;
+$color-dark-light: #393e46;
+$color-gray: #adadad;
+$color-gray-dark: #bebebe;
+$color-gray-light: #eeeeee;
+$color-light: #ffffff;
+$primary-color: #232020;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 414px) {
+    font-size: 58.5%;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $color-gray-light;
+  line-height: 1.5;
+  color: $color-dark;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.1rem;
+}
+
+p {
+  font-size: 1.6rem;
+  color: $color-dark !important;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  color: $color-dark;
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+
+::placeholder {
+  color: $color-gray;
+  font-family: "Lato", sans-serif;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.645, 0.045, 0.355, 4);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
