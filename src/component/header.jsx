@@ -35,15 +35,7 @@ class Header extends Component {
             />
             <span> Create Expense</span>
           </NavLink>
-          <NavLink to="/notifications" activeClassName="isActive">
-            <FontAwesomeIcon
-              icon="bell"
-              size="sm"
-              color="#232020"
-              style={{ marginRight: "0.8rem" }}
-            />
-            <span> Notifications </span>
-          </NavLink>
+
           <button onClick={startLogout}>
             <img src={photoURL} alt="Avatar of Jonathan Reinink" />
             <span> Logout </span>

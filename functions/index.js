@@ -9,5 +9,3 @@ admin.initializeApp(functions.config().firebase);
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
 // });
-
-// exports.notifications = functions.database.ref("/users/{uid}/expense/{id}").on

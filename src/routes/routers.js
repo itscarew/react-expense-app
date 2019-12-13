@@ -9,7 +9,6 @@ import AddExpense from "../component/addExpensePage";
 import Login from "../component/login";
 import PrivateRoute from "./privateRoute";
 import PublicRoute from "./publicRoute";
-import Notifications from "../component/notifications";
 
 export const history = createBrowserHistory();
 
@@ -22,7 +21,7 @@ export const Routers = () => {
           <PrivateRoute path="/main" component={Main} />
           <PrivateRoute path="/expense" component={AddExpense} />
           <PrivateRoute path="/edit/:id" component={Edit} />
-          <PrivateRoute path="/notifications" component={Notifications} />
+
           <Route component={PageNotFound} />
         </Switch>
       </div>
