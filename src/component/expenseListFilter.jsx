@@ -55,7 +55,7 @@ class ExpenseListFilter extends Component {
           onDatesChange={this.onDatesChange}
           focusedInput={calenderFocused}
           onFocusChange={this.onFocusChange}
-          numberOfMonths={2}
+          numberOfMonths={1}
           isOutsideRange={() => false}
           showClearDates={true}
           startDateId="Date Range Start"

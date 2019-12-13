@@ -250,7 +250,7 @@ button {
   .header__controller {
     display: flex;
     align-self: stretch;
-    width: 50%; }
+    width: 55%; }
     .header__controller .isActive {
       border-bottom: 0.2rem solid #232020; }
     @media screen and (max-width: 768px) {
@@ -271,7 +271,7 @@ button {
       transition: all 0.1s; }
       @media screen and (max-width: 768px) {
         .header__controller a {
-          padding: 0.8rem; } }
+          padding: auto; } }
       .header__controller a:hover {
         border-bottom: 0.2rem solid #232020; }
       .header__controller a:active {

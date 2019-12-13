@@ -23,7 +23,7 @@
   &__controller {
     display: flex;
     align-self: stretch;
-    width: 50%;
+    width: 55%;
 
     .isActive {
       border-bottom: 0.2rem solid $primary-color;
@@ -48,7 +48,7 @@
       transition: all 0.1s;
 
       @media screen and (max-width: 768px) {
-        padding: 0.8rem;
+        padding: auto;
       }
 
       &:hover {
