@@ -5,11 +5,14 @@
   &_container {
     position: relative;
     margin: 5rem auto;
-
     width: 50%;
 
+    h1 {
+      color: $secondary-color;
+    }
+
     @media screen and (max-width: 1024px) {
-      width: 80%;
+      width: 90%;
     }
 
     &_remove {
@@ -19,6 +22,7 @@
       background: $color-dark-light;
       color: $color-light;
       margin-top: 1rem;
+      border-radius: 50px;
 
       @media screen and (max-width: 1024px) {
         width: 40%;
@@ -54,8 +58,9 @@
           display: block;
           width: 25%;
           height: 4rem;
-          background: $primary-color;
+          background: $secondary-color;
           color: $color-light;
+          border-radius: 50px;
 
           @media screen and (max-width: 1024px) {
             width: 40%;

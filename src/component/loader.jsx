@@ -1,10 +1,10 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LoaderGif from "../assets/laoder.gif";
 
 const Loader = () => (
   <div className="loader">
     <div className="loader__img_conatainer">
-      <FontAwesomeIcon icon="circle-notch" size="10x" color="#232020" spin />
+      <img src={LoaderGif} alt="loader" />
     </div>
   </div>
 );

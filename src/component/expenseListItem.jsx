@@ -12,7 +12,7 @@ class ExpenseListItem extends Component {
           <div>
             <h3>{description}</h3>
             <p> Date : {moment(createdAt).format("MMM Do, YYYY")}</p>
-            <p style={{ fontSize: "1.4rem" }}>
+            <p style={{ fontSize: "1.3rem" }}>
               {" "}
               Note : {note ? note : "no details specified "}
             </p>

@@ -9,22 +9,27 @@ import AddExpense from "../component/addExpensePage";
 import Login from "../component/login";
 import PrivateRoute from "./privateRoute";
 import PublicRoute from "./publicRoute";
+import Footer from "../component/footer";
 
 export const history = createBrowserHistory();
 
 export const Routers = () => {
   return (
     <Router history={history}>
-      <div className="container">
-        <Switch>
-          <PublicRoute path="/" component={Login} exact={true} />
-          <PrivateRoute path="/main" component={Main} />
-          <PrivateRoute path="/expense" component={AddExpense} />
-          <PrivateRoute path="/edit/:id" component={Edit} />
+      <React.Fragment>
+        {" "}
+        <div className="container">
+          <Switch>
+            <PublicRoute path="/" component={Login} exact={true} />
+            <PrivateRoute path="/main" component={Main} />
+            <PrivateRoute path="/expense" component={AddExpense} />
+            <PrivateRoute path="/edit/:id" component={Edit} />
 
-          <Route component={PageNotFound} />
-        </Switch>
-      </div>
+            <Route component={PageNotFound} />
+          </Switch>
+        </div>
+        <Footer />
+      </React.Fragment>
     </Router>
   );
 };

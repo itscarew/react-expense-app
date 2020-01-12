@@ -4,8 +4,8 @@ $color-gray: #adadad;
 $color-gray-dark: #bebebe;
 $color-gray-light: #eeeeee;
 $color-light: #ffffff;
-$primary-color: #232020;
-
+$primary-color: #6a0dad;
+$secondary-color: #8741bb;
 * {
   margin: 0;
   padding: 0;
@@ -28,10 +28,10 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  background-color: $color-gray-light;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   color: $color-dark;
+  cursor: url("/src/assets/Location_dot_purple.svg.png"), auto;
 }
 
 h1,
@@ -42,7 +42,7 @@ h3 {
 
 p {
   font-size: 1.6rem;
-  color: $color-dark !important;
+  color: $color-dark-light !important;
 }
 
 ul {
@@ -59,12 +59,14 @@ select {
   outline: none;
   color: $color-dark;
   border: none;
-  font-family: "Lato", sans-serif;
+
+  font-family: "Montserrat", sans-serif;
 }
 
 ::placeholder {
   color: $color-gray;
-  font-family: "Lato", sans-serif;
+
+  font-family: "Montserrat", sans-serif;
 }
 
 button {
@@ -78,4 +80,9 @@ button {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.contain {
+  width: 90%;
+  margin: auto;
 }

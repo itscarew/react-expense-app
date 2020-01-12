@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { startLogout } from "../actions/auth";
 import { connect } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Header extends Component {
   state = {};
@@ -12,36 +11,27 @@ class Header extends Component {
       user: { photoURL }
     } = this.props;
     return (
-      <header className="header">
-        <NavLink to="/">
-          <h1 className="header__title">Expensify App</h1>
-        </NavLink>
-        <div className="header__controller">
-          <NavLink to="/main" activeClassName="isActive">
-            <FontAwesomeIcon
-              icon="tachometer-alt"
-              size="sm"
-              color="#232020"
-              style={{ marginRight: "0.8rem" }}
-            />
-            <span> DashBoard </span>
-          </NavLink>
-          <NavLink to="/expense" activeClassName="isActive">
-            <FontAwesomeIcon
-              icon="plus-circle"
-              size="sm"
-              color="#232020"
-              style={{ marginRight: "0.8rem" }}
-            />
-            <span> Create Expense</span>
-          </NavLink>
-
-          <button onClick={startLogout}>
-            <img src={photoURL} alt="Avatar of Jonathan Reinink" />
-            <span> Logout </span>
-          </button>
+      <div className="contain">
+        <div className="login__nav">
+          <h1>
+            {" "}
+            <NavLink to="/main"> Expensify. </NavLink>{" "}
+          </h1>
+          <ul>
+            <li>
+              {" "}
+              <NavLink to="/main"> DashBoard </NavLink>{" "}
+            </li>
+            <li>
+              {" "}
+              <NavLink to="/expense"> Create Expense </NavLink>{" "}
+            </li>
+            <li onClick={startLogout}>
+              Logout <img className="photoUrl" src={photoURL} alt="photoUrl" />{" "}
+            </li>
+          </ul>
         </div>
-      </header>
+      </div>
     );
   }
 }
